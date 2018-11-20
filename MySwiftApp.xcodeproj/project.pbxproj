@@ -15,6 +15,13 @@
 		22D0C2E221A478530060F5B1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 22D0C2E021A478530060F5B1 /* LaunchScreen.storyboard */; };
 		22D0C2ED21A478530060F5B1 /* MySwiftAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22D0C2EC21A478530060F5B1 /* MySwiftAppTests.swift */; };
 		22D0C2F821A478530060F5B1 /* MySwiftAppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22D0C2F721A478530060F5B1 /* MySwiftAppUITests.swift */; };
+		22D0C30621A479410060F5B1 /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22D0C30521A479410060F5B1 /* DataManager.swift */; };
+		22D0C30821A4799E0060F5B1 /* ServiceManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22D0C30721A4799E0060F5B1 /* ServiceManager.swift */; };
+		22D0C30B21A47B0B0060F5B1 /* WelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22D0C30A21A47B0B0060F5B1 /* WelcomeViewController.swift */; };
+		22D0C30F21A47D510060F5B1 /* WelcomeControllerImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22D0C30E21A47D510060F5B1 /* WelcomeControllerImpl.swift */; };
+		22D0C31221A47DF50060F5B1 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22D0C31121A47DF50060F5B1 /* LoginViewController.swift */; };
+		22D0C31621A487B50060F5B1 /* Users.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22D0C31521A487B50060F5B1 /* Users.swift */; };
+		22D0C31921A487E60060F5B1 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22D0C31821A487E60060F5B1 /* User.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +56,13 @@
 		22D0C2F321A478530060F5B1 /* MySwiftAppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MySwiftAppUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		22D0C2F721A478530060F5B1 /* MySwiftAppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MySwiftAppUITests.swift; sourceTree = "<group>"; };
 		22D0C2F921A478530060F5B1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		22D0C30521A479410060F5B1 /* DataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = "<group>"; };
+		22D0C30721A4799E0060F5B1 /* ServiceManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceManager.swift; sourceTree = "<group>"; };
+		22D0C30A21A47B0B0060F5B1 /* WelcomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeViewController.swift; sourceTree = "<group>"; };
+		22D0C30E21A47D510060F5B1 /* WelcomeControllerImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeControllerImpl.swift; sourceTree = "<group>"; };
+		22D0C31121A47DF50060F5B1 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		22D0C31521A487B50060F5B1 /* Users.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Users.swift; sourceTree = "<group>"; };
+		22D0C31821A487E60060F5B1 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,9 +113,10 @@
 		22D0C2D421A478520060F5B1 /* MySwiftApp */ = {
 			isa = PBXGroup;
 			children = (
+				22D0C31A21A488FA0060F5B1 /* Api */,
+				22D0C31321A487550060F5B1 /* Data */,
+				22D0C30921A47ADC0060F5B1 /* Controllers */,
 				22D0C2D521A478520060F5B1 /* AppDelegate.swift */,
-				22D0C2D721A478520060F5B1 /* FirstViewController.swift */,
-				22D0C2D921A478520060F5B1 /* SecondViewController.swift */,
 				22D0C2DB21A478520060F5B1 /* Main.storyboard */,
 				22D0C2DE21A478530060F5B1 /* Assets.xcassets */,
 				22D0C2E021A478530060F5B1 /* LaunchScreen.storyboard */,
@@ -126,6 +141,68 @@
 				22D0C2F921A478530060F5B1 /* Info.plist */,
 			);
 			path = MySwiftAppUITests;
+			sourceTree = "<group>";
+		};
+		22D0C30921A47ADC0060F5B1 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				22D0C31B21A489420060F5B1 /* Dashboard */,
+				22D0C31021A47DDC0060F5B1 /* Auth */,
+				22D0C30A21A47B0B0060F5B1 /* WelcomeViewController.swift */,
+				22D0C30E21A47D510060F5B1 /* WelcomeControllerImpl.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		22D0C31021A47DDC0060F5B1 /* Auth */ = {
+			isa = PBXGroup;
+			children = (
+				22D0C31121A47DF50060F5B1 /* LoginViewController.swift */,
+			);
+			path = Auth;
+			sourceTree = "<group>";
+		};
+		22D0C31321A487550060F5B1 /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				22D0C31721A487DA0060F5B1 /* Models */,
+				22D0C31421A4879C0060F5B1 /* Tables */,
+				22D0C30521A479410060F5B1 /* DataManager.swift */,
+			);
+			path = Data;
+			sourceTree = "<group>";
+		};
+		22D0C31421A4879C0060F5B1 /* Tables */ = {
+			isa = PBXGroup;
+			children = (
+				22D0C31521A487B50060F5B1 /* Users.swift */,
+			);
+			path = Tables;
+			sourceTree = "<group>";
+		};
+		22D0C31721A487DA0060F5B1 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				22D0C31821A487E60060F5B1 /* User.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		22D0C31A21A488FA0060F5B1 /* Api */ = {
+			isa = PBXGroup;
+			children = (
+				22D0C30721A4799E0060F5B1 /* ServiceManager.swift */,
+			);
+			path = Api;
+			sourceTree = "<group>";
+		};
+		22D0C31B21A489420060F5B1 /* Dashboard */ = {
+			isa = PBXGroup;
+			children = (
+				22D0C2D721A478520060F5B1 /* FirstViewController.swift */,
+				22D0C2D921A478520060F5B1 /* SecondViewController.swift */,
+			);
+			path = Dashboard;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -260,8 +337,15 @@
 			buildActionMask = 2147483647;
 			files = (
 				22D0C2DA21A478520060F5B1 /* SecondViewController.swift in Sources */,
+				22D0C31621A487B50060F5B1 /* Users.swift in Sources */,
+				22D0C30621A479410060F5B1 /* DataManager.swift in Sources */,
 				22D0C2D621A478520060F5B1 /* AppDelegate.swift in Sources */,
+				22D0C30F21A47D510060F5B1 /* WelcomeControllerImpl.swift in Sources */,
+				22D0C31221A47DF50060F5B1 /* LoginViewController.swift in Sources */,
+				22D0C30B21A47B0B0060F5B1 /* WelcomeViewController.swift in Sources */,
 				22D0C2D821A478520060F5B1 /* FirstViewController.swift in Sources */,
+				22D0C31921A487E60060F5B1 /* User.swift in Sources */,
+				22D0C30821A4799E0060F5B1 /* ServiceManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
