@@ -13,9 +13,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
 
-    var dataManager  = DataManagerImpl() as DataManager
+    let dataManager  = DataManagerImpl() as DataManager
     
-    var serviceManager =  ServiceManagerImpl() as ServiceManager
+    let serviceManager =  ServiceManagerImpl() as ServiceManager
     
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
