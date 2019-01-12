@@ -9,7 +9,7 @@
 import Foundation
 import UIKit
 
-protocol WelcomeController {
+protocol WelcomeController : Controller {
     func emailClicked()
     
     func facebookClicked()
@@ -17,29 +17,40 @@ protocol WelcomeController {
     func googleClicked()
 }
 
-protocol WelcomeView {
+protocol WelcomeView : View {
     
     func openLoginScreen()
     
     func openMainScreen()
+    
+    func displayEmailExistError()
 }
 
 
-class WelcomeViewController : UIViewController,WelcomeView {
+class WelcomeViewController : BaseViewController<WelcomeControllerImpl> , WelcomeView {
     
-    var presenter : WelcomeController?
+    @IBOutlet weak var emailButton: UIButton!
+    
+    func initController() -> WelcomeController {
+        return WelcomeControllerImpl(welcomeView: self)
+    }
     
     override func viewDidLoad() {
-        presenter = WelcomeControllerImpl(view: self,dataManager: appDelegate.dataManager)
+            
     }
     
     func openLoginScreen() {
-        
+       controller?.emailClicked()
     }
+    
     
     func openMainScreen() {
         
     }
     
+    
+    func displayEmailExistError() {
+        
+    }
     
 }

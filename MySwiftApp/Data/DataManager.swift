@@ -10,6 +10,8 @@ import Foundation
 
 protocol DataManager {
     func users() -> Users
+    
+    func session(email: String, token: String)
 }
 
 protocol DatabaseTable {
@@ -29,5 +31,10 @@ class DataManagerImpl: DataManager {
     
     func users() -> Users {
         return Users()
+    }
+    
+    func session(email: String, token: String) {
+        UserDefaults.standard.setValue(email, forKey: "email")
+        UserDefaults.standard.setValue(token, forKey: "token")
     }
 }

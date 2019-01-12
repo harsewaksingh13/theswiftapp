@@ -8,6 +8,10 @@
 
 import Foundation
 
-class User{
+struct User {
+    
+    var forename : String
+    var surname : String
+    var email : String
     
 }
