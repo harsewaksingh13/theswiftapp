@@ -1,29 +1,21 @@
 PODS:
   - Alamofire (4.7.3)
-  - RxAtomic (4.4.0)
-  - RxCocoa (4.4.0):
-    - RxSwift (~> 4.0)
-  - RxSwift (4.4.0):
-    - RxAtomic (~> 4.4)
+  - IQKeyboardManagerSwift (6.5.4)
 
 DEPENDENCIES:
   - Alamofire (= 4.7.3)
-  - RxCocoa (~> 4.0)
-  - RxSwift (~> 4.0)
+  - IQKeyboardManagerSwift
 
 SPEC REPOS:
   https://github.com/CocoaPods/Specs.git:
     - Alamofire
-    - RxAtomic
-    - RxCocoa
-    - RxSwift
+  trunk:
+    - IQKeyboardManagerSwift
 
 SPEC CHECKSUMS:
   Alamofire: c7287b6e5d7da964a70935e5db17046b7fde6568
-  RxAtomic: eacf60db868c96bfd63320e28619fe29c179656f
-  RxCocoa: df63ebf7b9a70d6b4eeea407ed5dd4efc8979749
-  RxSwift: 5976ecd04fc2fefd648827c23de5e11157faa973
+  IQKeyboardManagerSwift: 2dde0fc70110e8eac7ccce2a46fdbec6a850b414
 
-PODFILE CHECKSUM: f2e4809aad26c9ff0e77922aa5029d220e13bf93
+PODFILE CHECKSUM: 085cc047bfef634147a887feb1a2c94e48befb5f
 
-COCOAPODS: 1.5.0
+COCOAPODS: 1.8.4

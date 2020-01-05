@@ -7,9 +7,10 @@
 //
 
 import UIKit
+import IQKeyboardManagerSwift
 
 @UIApplicationMain
-class AppDelegate: UIResponder, UIApplicationDelegate {
+class AppDelegate: UIResponder, UIApplicationDelegate , AppManager {
 
     var window: UIWindow?
 
@@ -17,10 +18,20 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     let serviceManager =  ServiceManagerImpl() as ServiceManager
     
+    let rootNavigationController = UINavigationController()
+    
+    var navigator: Navigator?
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
-        return true
+        navigator = BaseNavigator(navigation: rootNavigationController)
+        self.window = UIWindow(frame: UIScreen.main.bounds)
+        self.window?.rootViewController = rootNavigationController
+        navigator?.dashboard()
+        self.window?.makeKeyAndVisible()
+        
+        IQKeyboardManager.shared.enable = true
+        return false
     }
 
     func applicationWillResignActive(_ application: UIApplication) {
@@ -48,8 +59,3 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 }
 
-extension UIViewController {
-    var appDelegate:AppDelegate {
-        return UIApplication.shared.delegate as! AppDelegate
-    }
-}

@@ -9,8 +9,7 @@
 import Foundation
 import UIKit
 
-protocol LoginView : View {
-    func openSuccessLogin()
+protocol SignInView : View {
     func getEmail() -> String
     func getPassword() -> String
     func onEmptyEmail()
@@ -19,22 +18,19 @@ protocol LoginView : View {
     func onWeakPassword()
 }
 
-protocol LoginController {
-    func onLoginClicked()
+protocol SignInController {
+    func signIn()
 }
 
-class LoginViewController: BaseViewController<LoginControllerImpl>, LoginView {
+class SignInViewController: BaseViewController<SignInControllerImpl>, SignInView {
     
-    
-    
-    override func initController() -> LoginControllerImpl {
-        return LoginControllerImpl(view: self, userViewModel: UserViewModel(serviceManager: appDelegate.serviceManager, dataManager: appDelegate.dataManager))
+        
+    override func initController() -> SignInControllerImpl {
+        return SignInControllerImpl(view: self, userInteractor: UserInteractor(appManager: appDelegate), userNavigator: UserNavigatorImpl(navigation:self.navigationController))
     }
     
-   
-    
     @IBAction func loginDidClick(_ sender: UIButton) {
-        controller?.onLoginClicked()
+        controller?.signIn()
     }
     
     override func viewDidLoad() {
@@ -42,11 +38,11 @@ class LoginViewController: BaseViewController<LoginControllerImpl>, LoginView {
     }
    
     func getEmail() -> String {
-        return "healthera.mobile@gmail.com" //TODO read from textField
+        return "harsewak@gmail.com" //TODO read from textField
     }
     
     func getPassword() -> String {
-        return "Healthera01" //TODO read from textField
+        return "Harsewak01" //TODO read from textField
     }
     
     func onEmptyEmail() {
@@ -64,10 +60,5 @@ class LoginViewController: BaseViewController<LoginControllerImpl>, LoginView {
     func onWeakPassword() {
         
     }
-    
-    func openSuccessLogin() {
-        
-    }
-    
     
 }

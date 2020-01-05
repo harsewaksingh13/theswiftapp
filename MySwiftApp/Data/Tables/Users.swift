@@ -8,24 +8,14 @@
 
 import Foundation
 
-class Users: DatabaseTable {
+class Users: DatabaseTableImpl<User> {
     
-    typealias T = User
-    
-    func save(obj: User) {
-        
+    override func save(obj: User) {
+        super.save(obj: obj)
     }
     
-    func delete(obj: User) {
-        
+    override func objId(obj: User) -> String {
+        return obj.id
     }
     
-    func get(id: String) -> User? {
-        return nil
-    }
-    
-    
-    func getAll() -> Array<User> {
-        return Array()
-    }
 }

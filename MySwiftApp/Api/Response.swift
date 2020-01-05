@@ -52,7 +52,7 @@ struct ApiError : Codable, Error {
 struct ErrorResponse : Decodable {
     var error : ApiError
     
-    func getError() -> Error? {
+    func getError() -> Error {
         return error
     }
     
@@ -86,6 +86,28 @@ struct DefaultResponse<R : Decodable> :  Decodable {
             self.responseData = responseData
         } else {
             responseData = Array()
+        }
+    }
+}
+
+
+struct DefaultResponseObject<R : Decodable> :  Decodable {
+    typealias T = R
+    
+    var responseData: T?
+    
+    func getResponse() -> T? {
+        return responseData
+    }
+    
+    enum CodingKeys: String, CodingKey {
+        case responseData = "data"
+    }
+    
+    init(from decoder: Decoder) throws {
+        let container = try decoder.container(keyedBy: CodingKeys.self)
+        if let responseData = try container.decodeIfPresent(T.self, forKey: .responseData) {
+            self.responseData = responseData
         }
     }
 }

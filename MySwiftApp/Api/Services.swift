@@ -8,31 +8,34 @@
 
 import Foundation
 
-enum Services {
+protocol ServiceP {
+    var url : String { get }
+}
 
-   // typealias Service = String
+enum Service {
     
-    case baseUrl
+    // typealias Service = String
+    
     case login
-    case logOut
-    case getAllAdherences(String)
-    case getPatientSpecificRemedies(String, String)
+    case register
+    case user(String)
     
     
     var service : String {
-         let baseUrl = "https://api.84r.co"
+        let baseUrl = "localhost:3000"
+        var endpointUrl = ""
         switch self {
-        case .baseUrl:
-            return ""
-        case .login, .logOut:
-            return "\(baseUrl)/tokens"
-            
-        case .getAllAdherences(let patientId):
-            return "\(baseUrl)/patients/\(patientId)/adherences?start=&end="
-            
-        case .getPatientSpecificRemedies(let patientId, let remedyId):
-            return "\(baseUrl)/patients/\(patientId)/remedies/\(remedyId)"
+        case .login:
+            endpointUrl = "/tokens"
+            break
+        case  .register:
+            endpointUrl = "/users"
+            break
+        case .user(let id):
+            endpointUrl = "/users/\(id)"
+            break
         }
+        return "\(baseUrl)"+endpointUrl
     }
 }
 

@@ -10,47 +10,41 @@ import Foundation
 import UIKit
 
 protocol WelcomeController : Controller {
-    func emailClicked()
-    
-    func facebookClicked()
-    
-    func googleClicked()
+    func createAccount()
+    func signIn()
 }
 
 protocol WelcomeView : View {
     
-    func openLoginScreen()
     
-    func openMainScreen()
-    
-    func displayEmailExistError()
 }
 
 
 class WelcomeViewController : BaseViewController<WelcomeControllerImpl> , WelcomeView {
     
-    @IBOutlet weak var emailButton: UIButton!
+    let createAccountButton = UIViewFactory.shared.button(text: Strings.createAccount)
+    let signInButton = UIViewFactory.shared.textButton(text: Strings.signIn)
     
-    func initController() -> WelcomeController {
-        return WelcomeControllerImpl(welcomeView: self)
+    override func initController() -> WelcomeControllerImpl {
+        return WelcomeControllerImpl(welcomeView: self, userNavigator: UserNavigatorImpl(navigation:self.navigationController))
     }
     
     override func viewDidLoad() {
-            
-    }
-    
-    func openLoginScreen() {
-       controller?.emailClicked()
-    }
-    
-    
-    func openMainScreen() {
+        super.viewDidLoad()
+        safeAreaView.addSubView(views: createAccountButton,signInButton)
+        safeAreaView.addHorizontalVisualConstraint(views: createAccountButton,signInButton)
+        safeAreaView.addVerticalVisualConstraint(views: [createAccountButton,signInButton])
         
+        self.signInButton.addTarget(self, action: #selector(signInDidClick), for: .touchUpInside)
+        self.createAccountButton.addTarget(self, action: #selector(createAccountDidClick), for: .touchUpInside)
     }
     
+    @objc func signInDidClick()  {
+        self.controller?.signIn()
+    }
     
-    func displayEmailExistError() {
-        
+    @objc func createAccountDidClick() {
+        self.controller?.createAccount()
     }
     
 }

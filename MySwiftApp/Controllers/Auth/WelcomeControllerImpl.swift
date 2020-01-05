@@ -12,31 +12,20 @@ import Foundation
 class WelcomeControllerImpl: BaseController, WelcomeController {
     
     let welcomeView: WelcomeView
+    let userNavigator: UserNavigator
     
-    init(welcomeView view: WelcomeView) {
+    init(welcomeView view: WelcomeView,userNavigator: UserNavigator) {
         self.welcomeView = view
+        self.userNavigator = userNavigator
         super.init(view: welcomeView)
     }
     
-    func emailClicked() {
-        welcomeView.openLoginScreen()
+    func createAccount() {
+        self.userNavigator.createAccount()
     }
     
-    func facebookClicked() {
-        
-    }
-    
-    func googleClicked() {
-        
-    }
-    
-    
-    override func onError(_ error: Error) {
-        super.onError(error)
-        let apiError = error as! ApiError
-        if apiError.isEmailExist() {
-            welcomeView.displayEmailExistError();
-        }
+    func signIn() {
+        self.userNavigator.signIn()
     }
     
 }

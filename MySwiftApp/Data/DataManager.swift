@@ -12,18 +12,8 @@ protocol DataManager {
     func users() -> Users
     
     func session(email: String, token: String)
-}
-
-protocol DatabaseTable {
-    associatedtype T
     
-    func save(obj: T)
-    
-    func delete(obj: T)
-    
-    func get(id: String) -> T?
-    
-    func getAll() -> Array<T>
+    func hasSession() -> Bool
 }
 
 
@@ -36,5 +26,9 @@ class DataManagerImpl: DataManager {
     func session(email: String, token: String) {
         UserDefaults.standard.setValue(email, forKey: "email")
         UserDefaults.standard.setValue(token, forKey: "token")
+    }
+    
+    func hasSession() -> Bool {
+        return (UserDefaults.standard.string(forKey: "token") ?? "").isNotEmpty
     }
 }

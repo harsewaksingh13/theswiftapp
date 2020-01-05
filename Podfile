@@ -7,8 +7,7 @@ target 'MySwiftApp' do
 
   # Pods for MySwiftApp
     pod 'Alamofire', '4.7.3'
-    pod 'RxSwift',    '~> 4.0'
-    pod 'RxCocoa',    '~> 4.0'
+    pod 'IQKeyboardManagerSwift'
     
   target 'MySwiftAppTests' do
     inherit! :search_paths

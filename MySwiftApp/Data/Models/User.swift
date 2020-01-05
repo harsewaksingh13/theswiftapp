@@ -10,6 +10,7 @@ import Foundation
 
 struct User {
     
+    var id: String
     var forename : String
     var surname : String
     var email : String

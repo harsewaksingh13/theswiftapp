@@ -8,22 +8,25 @@
 
 import Foundation
 
-class LoginControllerImpl :BaseController, LoginController {
+class SignInControllerImpl :BaseController, SignInController {
     
-    let loginView : LoginView
-    let userViewModel: UserViewModel
     
-    init(view: LoginView, userViewModel: UserViewModel) {
+    let loginView : SignInView
+    let userInteractor: UserInteractor
+    let userNavigator: UserNavigator
+    
+    init(view: SignInView, userInteractor: UserInteractor,userNavigator: UserNavigator) {
         self.loginView = view
-        self.userViewModel = userViewModel
+        self.userInteractor = userInteractor
+        self.userNavigator = userNavigator
         super.init(view: view)
     }
     
-    func onLoginClicked() {
-        login(email: loginView.getEmail(), password: loginView.getPassword())
+    func signIn() {
+        signIn(email: loginView.getEmail(), password: loginView.getPassword())
     }
     
-    private func login(email: String, password: String) {
+    private func signIn(email: String, password: String) {
         
         if (email.isBlank) {
             loginView.onEmptyEmail()
@@ -42,13 +45,10 @@ class LoginControllerImpl :BaseController, LoginController {
             loginView.onWeakPassword()
             return
         }
-        //loginView.showProgress()
-        
-        //userViewModel.post(LoginRequest(email, password), { view.onSuccessLogin() },{onError(it)}))
-       
-        userViewModel.post(request: LoginRequest(username: email,password: password), {
+//        loginView.showProgress()
+        userInteractor.post(request: LoginRequest(username: email,password: password), {
             _ in
-            self.loginView.openSuccessLogin()
+//            self.loginView.dismissProgress()
         }, { error in
             self.onError(error)
         })
