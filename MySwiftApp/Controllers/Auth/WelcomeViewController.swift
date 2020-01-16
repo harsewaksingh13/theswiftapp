@@ -9,7 +9,7 @@
 import Foundation
 import UIKit
 
-protocol WelcomeController : Controller {
+protocol WelcomePresenter : Presenter {
     func createAccount()
     func signIn()
 }
@@ -20,13 +20,13 @@ protocol WelcomeView : View {
 }
 
 
-class WelcomeViewController : BaseViewController<WelcomeControllerImpl> , WelcomeView {
+class WelcomeViewController : BaseViewController<WelcomePresenterImpl> , WelcomeView {
     
     let createAccountButton = UIViewFactory.shared.button(text: Strings.createAccount)
     let signInButton = UIViewFactory.shared.textButton(text: Strings.signIn)
     
-    override func initController() -> WelcomeControllerImpl {
-        return WelcomeControllerImpl(welcomeView: self, userNavigator: UserNavigatorImpl(navigation:self.navigationController))
+    override func initPresenter() -> WelcomePresenterImpl {
+        return WelcomePresenterImpl(welcomeView: self, userNavigator: UserNavigatorImpl(navigation:self.navigationController))
     }
     
     override func viewDidLoad() {
@@ -40,11 +40,11 @@ class WelcomeViewController : BaseViewController<WelcomeControllerImpl> , Welcom
     }
     
     @objc func signInDidClick()  {
-        self.controller?.signIn()
+        self.presenter?.signIn()
     }
     
     @objc func createAccountDidClick() {
-        self.controller?.createAccount()
+        self.presenter?.createAccount()
     }
     
 }

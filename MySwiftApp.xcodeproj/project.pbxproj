@@ -9,7 +9,7 @@
 /* Begin PBXBuildFile section */
 		220FC97F21C22C0100FD2D69 /* Services.swift in Sources */ = {isa = PBXBuildFile; fileRef = 220FC97E21C22C0100FD2D69 /* Services.swift */; };
 		223CC62A21AEA102002CC595 /* AuthResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 223CC62921AEA102002CC595 /* AuthResponse.swift */; };
-		223CC62F21AEB340002CC595 /* BaseController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 223CC62E21AEB340002CC595 /* BaseController.swift */; };
+		223CC62F21AEB340002CC595 /* BaseViewController+Presenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 223CC62E21AEB340002CC595 /* BaseViewController+Presenter.swift */; };
 		223CC63221AF0137002CC595 /* AuthRequests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 223CC63121AF0137002CC595 /* AuthRequests.swift */; };
 		22D0C2D621A478520060F5B1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22D0C2D521A478520060F5B1 /* AppDelegate.swift */; };
 		22D0C2D821A478520060F5B1 /* FirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22D0C2D721A478520060F5B1 /* FirstViewController.swift */; };
@@ -21,7 +21,7 @@
 		22D0C30621A479410060F5B1 /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22D0C30521A479410060F5B1 /* DataManager.swift */; };
 		22D0C30821A4799E0060F5B1 /* ServiceManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22D0C30721A4799E0060F5B1 /* ServiceManager.swift */; };
 		22D0C30B21A47B0B0060F5B1 /* WelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22D0C30A21A47B0B0060F5B1 /* WelcomeViewController.swift */; };
-		22D0C30F21A47D510060F5B1 /* WelcomeControllerImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22D0C30E21A47D510060F5B1 /* WelcomeControllerImpl.swift */; };
+		22D0C30F21A47D510060F5B1 /* WelcomePresenterImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22D0C30E21A47D510060F5B1 /* WelcomePresenterImpl.swift */; };
 		22D0C31221A47DF50060F5B1 /* SignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22D0C31121A47DF50060F5B1 /* SignInViewController.swift */; };
 		22D0C31621A487B50060F5B1 /* Users.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22D0C31521A487B50060F5B1 /* Users.swift */; };
 		22D0C31921A487E60060F5B1 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22D0C31821A487E60060F5B1 /* User.swift */; };
@@ -40,7 +40,7 @@
 		22F6677123C270A600E8316F /* Extension+Alamofire.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22F6676923C270A600E8316F /* Extension+Alamofire.swift */; };
 		22F6677323C28BFB00E8316F /* Navigator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22F6677223C28BFB00E8316F /* Navigator.swift */; };
 		22F6677723C2974600E8316F /* DashboardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22F6677623C2974600E8316F /* DashboardViewController.swift */; };
-		22F6677B23C29AD300E8316F /* SignInControllerImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22F6677A23C29AD300E8316F /* SignInControllerImpl.swift */; };
+		22F6677B23C29AD300E8316F /* SignInPresenterImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22F6677A23C29AD300E8316F /* SignInPresenterImpl.swift */; };
 		22F6677D23C29C3D00E8316F /* ViewFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22F6677C23C29C3D00E8316F /* ViewFactory.swift */; };
 		22F6677F23C2A60000E8316F /* Table.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22F6677E23C2A60000E8316F /* Table.swift */; };
 		22F6678123C2A70D00E8316F /* Intereactor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22F6678023C2A70D00E8316F /* Intereactor.swift */; };
@@ -71,7 +71,7 @@
 		021B50C1C467A6F2BAF82DDA /* Pods-MySwiftAppUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MySwiftAppUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MySwiftAppUITests/Pods-MySwiftAppUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		220FC97E21C22C0100FD2D69 /* Services.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Services.swift; sourceTree = "<group>"; };
 		223CC62921AEA102002CC595 /* AuthResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthResponse.swift; sourceTree = "<group>"; };
-		223CC62E21AEB340002CC595 /* BaseController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseController.swift; sourceTree = "<group>"; };
+		223CC62E21AEB340002CC595 /* BaseViewController+Presenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "BaseViewController+Presenter.swift"; sourceTree = "<group>"; };
 		223CC63121AF0137002CC595 /* AuthRequests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthRequests.swift; sourceTree = "<group>"; };
 		22D0C2D221A478520060F5B1 /* MySwiftApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MySwiftApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		22D0C2D521A478520060F5B1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -89,7 +89,7 @@
 		22D0C30521A479410060F5B1 /* DataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = "<group>"; };
 		22D0C30721A4799E0060F5B1 /* ServiceManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceManager.swift; sourceTree = "<group>"; };
 		22D0C30A21A47B0B0060F5B1 /* WelcomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeViewController.swift; sourceTree = "<group>"; };
-		22D0C30E21A47D510060F5B1 /* WelcomeControllerImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeControllerImpl.swift; sourceTree = "<group>"; };
+		22D0C30E21A47D510060F5B1 /* WelcomePresenterImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomePresenterImpl.swift; sourceTree = "<group>"; };
 		22D0C31121A47DF50060F5B1 /* SignInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInViewController.swift; sourceTree = "<group>"; };
 		22D0C31521A487B50060F5B1 /* Users.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Users.swift; sourceTree = "<group>"; };
 		22D0C31821A487E60060F5B1 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
@@ -108,7 +108,7 @@
 		22F6676923C270A600E8316F /* Extension+Alamofire.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Extension+Alamofire.swift"; sourceTree = "<group>"; };
 		22F6677223C28BFB00E8316F /* Navigator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Navigator.swift; sourceTree = "<group>"; };
 		22F6677623C2974600E8316F /* DashboardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardViewController.swift; sourceTree = "<group>"; };
-		22F6677A23C29AD300E8316F /* SignInControllerImpl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignInControllerImpl.swift; sourceTree = "<group>"; };
+		22F6677A23C29AD300E8316F /* SignInPresenterImpl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignInPresenterImpl.swift; sourceTree = "<group>"; };
 		22F6677C23C29C3D00E8316F /* ViewFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewFactory.swift; sourceTree = "<group>"; };
 		22F6677E23C2A60000E8316F /* Table.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Table.swift; sourceTree = "<group>"; };
 		22F6678023C2A70D00E8316F /* Intereactor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Intereactor.swift; sourceTree = "<group>"; };
@@ -254,7 +254,7 @@
 			children = (
 				22D0C31B21A489420060F5B1 /* Dashboard */,
 				22D0C31021A47DDC0060F5B1 /* Auth */,
-				223CC62E21AEB340002CC595 /* BaseController.swift */,
+				223CC62E21AEB340002CC595 /* BaseViewController+Presenter.swift */,
 				22F6677223C28BFB00E8316F /* Navigator.swift */,
 			);
 			path = Controllers;
@@ -264,9 +264,9 @@
 			isa = PBXGroup;
 			children = (
 				22D0C31121A47DF50060F5B1 /* SignInViewController.swift */,
-				22F6677A23C29AD300E8316F /* SignInControllerImpl.swift */,
+				22F6677A23C29AD300E8316F /* SignInPresenterImpl.swift */,
 				22D0C30A21A47B0B0060F5B1 /* WelcomeViewController.swift */,
-				22D0C30E21A47D510060F5B1 /* WelcomeControllerImpl.swift */,
+				22D0C30E21A47D510060F5B1 /* WelcomePresenterImpl.swift */,
 				22F6678223C2A80E00E8316F /* CreateAccountViewController.swift */,
 			);
 			path = Auth;
@@ -572,10 +572,10 @@
 				22F6676C23C270A600E8316F /* Extension+UIViewController.swift in Sources */,
 				22F6677023C270A600E8316F /* Extensions+Date.swift in Sources */,
 				22D0C2D621A478520060F5B1 /* AppDelegate.swift in Sources */,
-				22F6677B23C29AD300E8316F /* SignInControllerImpl.swift in Sources */,
+				22F6677B23C29AD300E8316F /* SignInPresenterImpl.swift in Sources */,
 				22F6675F23C2702400E8316F /* Strings.swift in Sources */,
 				22F6678123C2A70D00E8316F /* Intereactor.swift in Sources */,
-				22D0C30F21A47D510060F5B1 /* WelcomeControllerImpl.swift in Sources */,
+				22D0C30F21A47D510060F5B1 /* WelcomePresenterImpl.swift in Sources */,
 				22D0C31221A47DF50060F5B1 /* SignInViewController.swift in Sources */,
 				22F6677123C270A600E8316F /* Extension+Alamofire.swift in Sources */,
 				22D0C30B21A47B0B0060F5B1 /* WelcomeViewController.swift in Sources */,
@@ -592,7 +592,7 @@
 				22D0C31921A487E60060F5B1 /* User.swift in Sources */,
 				22F6676E23C270A600E8316F /* Extension+UIView.swift in Sources */,
 				22F6676023C2702400E8316F /* Images.swift in Sources */,
-				223CC62F21AEB340002CC595 /* BaseController.swift in Sources */,
+				223CC62F21AEB340002CC595 /* BaseViewController+Presenter.swift in Sources */,
 				22F6678323C2A80E00E8316F /* CreateAccountViewController.swift in Sources */,
 				22D0C30821A4799E0060F5B1 /* ServiceManager.swift in Sources */,
 				22F6677D23C29C3D00E8316F /* ViewFactory.swift in Sources */,

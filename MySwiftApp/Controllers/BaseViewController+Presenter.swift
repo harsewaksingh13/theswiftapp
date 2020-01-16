@@ -9,7 +9,7 @@
 import Foundation
 import UIKit
 
-protocol Controller {
+protocol Presenter {
     
     func viewDidLoad()
     
@@ -27,7 +27,7 @@ protocol AppManager {
     var navigator: Navigator? { get }
 }
 
-class BaseController : Controller {
+class BasePresenter : Presenter {
     
     var view : View
     
@@ -60,9 +60,9 @@ class BaseController : Controller {
 }
 
 //MARK: a base class for UIViewController
-class BaseViewController<C: Controller> : UIViewController, View {
+class BaseViewController<P: Presenter> : UIViewController, View {
     
-    var controller: C?
+    var presenter: P?
     
     var safeAreaView:UIView = {
         let view = UIView()
@@ -74,8 +74,7 @@ class BaseViewController<C: Controller> : UIViewController, View {
     override func viewDidLoad() {
         super.viewDidLoad()
         setupSafeArea()
-        controller = initController()
-        controller?.viewDidLoad()
+        presenter = initPresenter()
         self.navigationController?.enableSegue()
     }
     
@@ -105,8 +104,8 @@ class BaseViewController<C: Controller> : UIViewController, View {
         safeAreaView.backgroundColor = color
     }
     
-    func initController() -> C {
-        return BaseController(view: self) as! C
+    func initPresenter() -> P {
+        return BasePresenter(view: self) as! P
     }
     
     func onError(error: String) {

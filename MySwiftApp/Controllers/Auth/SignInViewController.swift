@@ -18,19 +18,18 @@ protocol SignInView : View {
     func onWeakPassword()
 }
 
-protocol SignInController {
+protocol SignInPresenter {
     func signIn()
 }
 
-class SignInViewController: BaseViewController<SignInControllerImpl>, SignInView {
-    
+class SignInViewController: BaseViewController<SignInPresenterImpl>, SignInView {
         
-    override func initController() -> SignInControllerImpl {
-        return SignInControllerImpl(view: self, userInteractor: UserInteractor(appManager: appDelegate), userNavigator: UserNavigatorImpl(navigation:self.navigationController))
+    override func initPresenter() -> SignInPresenterImpl {
+        return SignInPresenterImpl(view: self, userInteractor: UserInteractor(appManager: appDelegate), userNavigator: UserNavigatorImpl(navigation:self.navigationController))
     }
     
     @IBAction func loginDidClick(_ sender: UIButton) {
-        controller?.signIn()
+        presenter?.signIn()
     }
     
     override func viewDidLoad() {

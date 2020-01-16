@@ -9,7 +9,7 @@
 import Foundation
 
 
-class WelcomeControllerImpl: BaseController, WelcomeController {
+class WelcomePresenterImpl: BasePresenter, WelcomePresenter {
     
     let welcomeView: WelcomeView
     let userNavigator: UserNavigator

@@ -8,7 +8,7 @@
 
 import Foundation
 
-class SignInControllerImpl :BaseController, SignInController {
+class SignInPresenterImpl :BasePresenter, SignInPresenter {
     
     
     let loginView : SignInView
