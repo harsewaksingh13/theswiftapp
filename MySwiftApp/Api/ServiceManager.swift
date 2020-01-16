@@ -13,6 +13,8 @@ import Alamofire
 protocol ServiceManager {
     
     func login(loginRequest: LoginRequest,_ responseHandler:@escaping ResponseHandler<AuthResponse>,_ errorHandler:@escaping ErrorHandler) -> DataRequest
+    
+    func createAccount(createAccountRequest: CreateAccountRequest,_ responseHandler:@escaping ResponseHandler<AuthResponse>,_ errorHandler:@escaping ErrorHandler) -> DataRequest
 }
 
 
@@ -28,6 +30,11 @@ class ServiceManagerImpl: ServiceManager {
     
     func login(loginRequest: LoginRequest, _ responseHandler: @escaping ResponseHandler<AuthResponse>, _ errorHandler: @escaping ErrorHandler) -> DataRequest {
         return sessionManager.post(url: Service.login, parameters: loginRequest).decodeJSONResponse(AuthResponse.self, responseHandler, errorHandler)
+    }
+    
+    func createAccount(createAccountRequest: CreateAccountRequest, _ responseHandler: @escaping ResponseHandler<AuthResponse>, _ errorHandler: @escaping ErrorHandler) -> DataRequest {
+        //todo: change to create url
+         return sessionManager.post(url: Service.login, parameters: createAccountRequest).decodeJSONResponse(AuthResponse.self, responseHandler, errorHandler)
     }
     
 }

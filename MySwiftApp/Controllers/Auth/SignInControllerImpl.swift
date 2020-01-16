@@ -49,6 +49,7 @@ class SignInControllerImpl :BaseController, SignInController {
         userInteractor.post(request: LoginRequest(username: email,password: password), {
             _ in
 //            self.loginView.dismissProgress()
+            self.userNavigator.dashboard()
         }, { error in
             self.onError(error)
         })

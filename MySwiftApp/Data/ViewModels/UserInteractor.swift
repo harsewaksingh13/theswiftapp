@@ -19,6 +19,14 @@ class UserInteractor : BaseInteractor<Encodable,User> {
                 self.dataManager.users().save(obj: user)
                 responseHandler(user)
             }, errorHandler)
+        } else if let request = request as? CreateAccountRequest {
+            _ = serviceManager.createAccount(createAccountRequest: request, {
+                response in
+                let user = response.user.toUser()
+                self.dataManager.session(email: user.email, token: response.token)
+                self.dataManager.users().save(obj: user)
+                responseHandler(user)
+            }, errorHandler)
         }
     }
     

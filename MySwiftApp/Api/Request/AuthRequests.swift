@@ -18,6 +18,7 @@ struct LoginRequest : Encodable{
     }
 }
 
-struct RegisterRequest : Encodable {
-    
+struct CreateAccountRequest : Encodable {
+    var firstName: String
+    var lastName : String
 }
