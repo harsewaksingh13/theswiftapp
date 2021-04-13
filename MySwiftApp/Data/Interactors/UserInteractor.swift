@@ -8,7 +8,7 @@
 
 import Foundation
 //handle both login and register encodable requests
-class UserInteractor : BaseInteractor<Encodable,User> {
+class UserInteractor: BaseInteractor<Encodable,User> {
    
     override func post(request: Encodable,_ responseHandler:@escaping ResponseHandler<User>,_ errorHandler: @escaping ErrorHandler) {
         if let request = request as? LoginRequest {

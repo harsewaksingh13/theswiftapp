@@ -10,24 +10,27 @@ import UIKit
 import IQKeyboardManagerSwift
 
 @UIApplicationMain
-class AppDelegate: UIResponder, UIApplicationDelegate , AppManager {
+class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
 
-    let dataManager  = DataManagerImpl() as DataManager
-    
-    let serviceManager =  ServiceManagerImpl() as ServiceManager
+//    let dataManager  = DataManagerImpl() as DataManager
+//
+//    let serviceManager =  ServiceManagerImpl() as ServiceManager
     
     let rootNavigationController = UINavigationController()
     
-    var navigator: Navigator?
+//    var navigator: Navigator?
+    @Inject var navigator: AppNavigator
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
-        navigator = BaseNavigator(navigation: rootNavigationController)
+//        navigator = BaseNavigator(navigation: rootNavigationController)
+        navigator.initNavigation(rootNavigationController)
+        navigator.auth.initNavigation(rootNavigationController)
         self.window = UIWindow(frame: UIScreen.main.bounds)
         self.window?.rootViewController = rootNavigationController
-        navigator?.dashboard()
+        navigator.auth.dashboard()
         self.window?.makeKeyAndVisible()
         
         IQKeyboardManager.shared.enable = true

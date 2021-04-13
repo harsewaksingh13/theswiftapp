@@ -25,7 +25,7 @@ protocol SignInPresenter {
 class SignInViewController: BaseViewController<SignInPresenterImpl>, SignInView {
         
     override func initPresenter() -> SignInPresenterImpl {
-        return SignInPresenterImpl(view: self, userInteractor: UserInteractor(appManager: appDelegate), userNavigator: UserNavigatorImpl(navigation:self.navigationController))
+        return SignInPresenterImpl(view: self)
     }
     
     @IBAction func loginDidClick(_ sender: UIButton) {

@@ -19,12 +19,8 @@ protocol View {
     func setBackgroundColor(color: UIColor)
     //display error on UI
     func onError(error: String)
-}
-
-protocol AppManager {
-    var dataManager: DataManager { get }
-    var serviceManager: ServiceManager { get }
-    var navigator: Navigator? { get }
+    
+    func viewController() -> UIViewController
 }
 
 class BasePresenter : Presenter {
@@ -74,6 +70,7 @@ class BaseViewController<P: Presenter> : UIViewController, View {
     override func viewDidLoad() {
         super.viewDidLoad()
         setupSafeArea()
+        setBackgroundColor(color: .white)
         presenter = initPresenter()
         self.navigationController?.enableSegue()
     }
@@ -114,5 +111,8 @@ class BaseViewController<P: Presenter> : UIViewController, View {
         self.present(alert, animated: true, completion: nil)
     }
     
+    func viewController() -> UIViewController {
+        return self
+    }
 }
 

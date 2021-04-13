@@ -16,7 +16,6 @@ protocol WelcomePresenter : Presenter {
 
 protocol WelcomeView : View {
     
-    
 }
 
 
@@ -26,7 +25,7 @@ class WelcomeViewController : BaseViewController<WelcomePresenterImpl> , Welcome
     let signInButton = UIViewFactory.shared.textButton(text: Strings.signIn)
     
     override func initPresenter() -> WelcomePresenterImpl {
-        return WelcomePresenterImpl(welcomeView: self, userNavigator: UserNavigatorImpl(navigation:self.navigationController))
+        return WelcomePresenterImpl(welcomeView: self)
     }
     
     override func viewDidLoad() {

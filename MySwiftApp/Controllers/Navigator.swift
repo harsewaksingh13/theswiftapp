@@ -10,45 +10,53 @@ import Foundation
 import UIKit
 
 protocol Navigator {
+    func initNavigation(_ navigationController: UINavigationController?)
     func navigate(_ viewController: UIViewController)
     func present(_ viewController: UIViewController)
-    func dashboard()
 }
 
+protocol AppNavigator: Navigator {
+    var auth: AuthNavigator { get }
+}
 
-protocol UserNavigator : Navigator {
+class AppNavigation: BaseNavigator, AppNavigator {
+    
+    var auth: AuthNavigator {
+        return AuthNavigation()
+    }
+    
+}
+
+protocol AuthNavigator: Navigator {
     func signIn()
     func createAccount()
     func profile()
     func editProfile()
+    func dashboard()
 }
 
-class BaseNavigator : Navigator {
+class BaseNavigator: Navigator {
     
-    var navigation: UINavigationController?
+    var navigationController: UINavigationController?
+
     
-    init(navigation: UINavigationController?) {
-        self.navigation = navigation
+    func initNavigation(_ navigationController: UINavigationController?) {
+        self.navigationController = navigationController
     }
     
     func navigate(_ viewController: UIViewController) {
-        navigation?.pushViewController(viewController,animated: true)
+        navigationController?.pushViewController(viewController,animated: true)
     }
     
     func present(_ viewController: UIViewController) {
-        navigation?.present(viewController, animated: true)
+        navigationController?.present(viewController, animated: true)
     }
     
-    func dashboard() {
-        if(self.navigation?.appDelegate.dataManager.hasSession() ?? false){
-            navigate(DashboardViewController())
-        } else {
-            navigate(WelcomeViewController())
-        }
-    }
 }
 
-class UserNavigatorImpl :BaseNavigator, UserNavigator {
+class AuthNavigation: BaseNavigator, AuthNavigator {
+    
+    @Inject var dataManager: DataManager
     
     func signIn() {
        self.navigate(SignInViewController())
@@ -64,6 +72,14 @@ class UserNavigatorImpl :BaseNavigator, UserNavigator {
     
     func editProfile() {
         
+    }
+    
+    func dashboard() {
+        if(dataManager.hasSession()){
+            navigate(DashboardViewController())
+        } else {
+            navigate(WelcomeViewController())
+        }
     }
 }
 

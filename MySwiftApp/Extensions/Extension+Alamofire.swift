@@ -32,7 +32,7 @@ extension SessionManager{
         var defaultHeaders = headers
         if(headers == nil){
             defaultHeaders = ["Content-Type": "application/json",
-             "client-id": "9xsEQDt9RjgYeWB",
+             "client-id": "",
              "app-platform": "ios"]
         }
         if let token = UserDefaults.standard.string(forKey: "token") {

@@ -8,17 +8,15 @@
 
 import Foundation
 
-class SignInPresenterImpl :BasePresenter, SignInPresenter {
+class SignInPresenterImpl: BasePresenter, SignInPresenter {
     
     
     let loginView : SignInView
-    let userInteractor: UserInteractor
-    let userNavigator: UserNavigator
+    @Inject var userInteractor: UserInteractor
+    @Inject var navigator: AppNavigator
     
-    init(view: SignInView, userInteractor: UserInteractor,userNavigator: UserNavigator) {
+    init(view: SignInView) {
         self.loginView = view
-        self.userInteractor = userInteractor
-        self.userNavigator = userNavigator
         super.init(view: view)
     }
     
@@ -47,9 +45,9 @@ class SignInPresenterImpl :BasePresenter, SignInPresenter {
         }
 //        loginView.showProgress()
         userInteractor.post(request: LoginRequest(username: email,password: password), {
-            _ in
+          [weak self]  _ in
 //            self.loginView.dismissProgress()
-            self.userNavigator.dashboard()
+            self?.navigator.auth.dashboard()
         }, { error in
             self.onError(error)
         })

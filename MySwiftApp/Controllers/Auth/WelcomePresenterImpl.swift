@@ -12,20 +12,20 @@ import Foundation
 class WelcomePresenterImpl: BasePresenter, WelcomePresenter {
     
     let welcomeView: WelcomeView
-    let userNavigator: UserNavigator
+    @Inject var appNavigator: AppNavigator
     
-    init(welcomeView view: WelcomeView,userNavigator: UserNavigator) {
+    init(welcomeView view: WelcomeView) {
         self.welcomeView = view
-        self.userNavigator = userNavigator
         super.init(view: welcomeView)
+        appNavigator.auth.initNavigation(view.viewController().navigationController)
     }
     
     func createAccount() {
-        self.userNavigator.createAccount()
+        appNavigator.auth.createAccount()
     }
     
     func signIn() {
-        self.userNavigator.signIn()
+        appNavigator.auth.signIn()
     }
     
 }

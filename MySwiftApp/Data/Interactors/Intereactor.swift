@@ -39,9 +39,6 @@ class BaseInteractor<Req,Res>: Interactor {
     
     var dataRequest: DataRequest?
     
-    convenience init(appManager: AppManager) {
-        self.init(serviceManager:appManager.serviceManager,dataManager:appManager.dataManager)
-    }
     
     init(serviceManager: ServiceManager, dataManager: DataManager) {
         self.serviceManager = serviceManager
