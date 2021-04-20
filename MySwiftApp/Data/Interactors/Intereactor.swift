@@ -34,16 +34,10 @@ class BaseInteractor<Req,Res>: Interactor {
     //R is request
     typealias R = Req
     
-    let serviceManager: ServiceManager
-    let dataManager: DataManager
+    @Inject var serviceManager: ServiceManager
+    @Inject var dataManager: DataManager
     
     var dataRequest: DataRequest?
-    
-    
-    init(serviceManager: ServiceManager, dataManager: DataManager) {
-        self.serviceManager = serviceManager
-        self.dataManager = dataManager
-    }
     
     func post(request: R,_ responseHandler:@escaping ResponseHandler<Res>,_ errorHandler:@escaping ErrorHandler){
         

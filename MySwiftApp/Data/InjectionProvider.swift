@@ -30,6 +30,8 @@ fileprivate class InstanceProvider<T> {
             return ServiceManagerImpl() as! T
         } else if type == AppNavigator.self {
             return AppNavigation() as! T
+        } else if type == UserInteractor.self {
+            return UserInteractor() as! T
         }
         
         fatalError("InstanceProvider => Unrecognised type \(type) with Inject!")
