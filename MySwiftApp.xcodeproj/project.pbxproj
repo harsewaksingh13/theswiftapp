@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		220FC97F21C22C0100FD2D69 /* Services.swift in Sources */ = {isa = PBXBuildFile; fileRef = 220FC97E21C22C0100FD2D69 /* Services.swift */; };
 		223B9CCC2616756C004D488C /* InjectionProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 223B9CCB2616756C004D488C /* InjectionProvider.swift */; };
+		223B9CE6262AD695004D488C /* SignInPresenterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 223B9CE5262AD695004D488C /* SignInPresenterTests.swift */; };
 		223CC62A21AEA102002CC595 /* AuthResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 223CC62921AEA102002CC595 /* AuthResponse.swift */; };
 		223CC62F21AEB340002CC595 /* BaseViewController+Presenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 223CC62E21AEB340002CC595 /* BaseViewController+Presenter.swift */; };
 		223CC63221AF0137002CC595 /* AuthRequests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 223CC63121AF0137002CC595 /* AuthRequests.swift */; };
@@ -72,6 +73,7 @@
 		021B50C1C467A6F2BAF82DDA /* Pods-MySwiftAppUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MySwiftAppUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MySwiftAppUITests/Pods-MySwiftAppUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		220FC97E21C22C0100FD2D69 /* Services.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Services.swift; sourceTree = "<group>"; };
 		223B9CCB2616756C004D488C /* InjectionProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InjectionProvider.swift; sourceTree = "<group>"; };
+		223B9CE5262AD695004D488C /* SignInPresenterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInPresenterTests.swift; sourceTree = "<group>"; };
 		223CC62921AEA102002CC595 /* AuthResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthResponse.swift; sourceTree = "<group>"; };
 		223CC62E21AEB340002CC595 /* BaseViewController+Presenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "BaseViewController+Presenter.swift"; sourceTree = "<group>"; };
 		223CC63121AF0137002CC595 /* AuthRequests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthRequests.swift; sourceTree = "<group>"; };
@@ -238,6 +240,7 @@
 			children = (
 				22D0C2EC21A478530060F5B1 /* MySwiftAppTests.swift */,
 				22D0C2EE21A478530060F5B1 /* Info.plist */,
+				223B9CE5262AD695004D488C /* SignInPresenterTests.swift */,
 			);
 			path = MySwiftAppTests;
 			sourceTree = "<group>";
@@ -607,6 +610,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				223B9CE6262AD695004D488C /* SignInPresenterTests.swift in Sources */,
 				22D0C2ED21A478530060F5B1 /* MySwiftAppTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
